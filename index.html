@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> My Dynamic Multiplication Table </title>
+
+    <link rel="stylesheet" href="css/dynamicTable.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+     
+<!--
+File: homework4 (Part 2).html
+GUI Assignment: Using the jQuery User Interface library.
+Christian Kayego, UMass Lowell Computer Science, christian_kayego@student.uml.edu
+This assignment is a part 2 of homework 4 in which we explore another javascript library as we did with part 1 with
+the jQuery Validator plugin. This part of the assignment will deal with two parts of the jQuery UI components
+which are the slider and the tabbed interface. JQuery UI sliders are to be added for each of the text input fields
+and also implementing a a jQuery UI tabbed interface so that every time a table is generated, it is displayed in a 
+new tab with its labeled entries to generate the table. On top of that, implement it in a way so that the tabs can
+be deleted individually but also multiple tabs can be deleted all at once. 
+Copyright (c) 2023 by Christian Kayego. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by Christian Kayego on June 19, 2023 at 4:30 pm
+Sources used: https://www.w3schools.com/, https://www.youtube.com/watch?v=UB1O30fR-EE, https://stackoverflow.com/
+jQueryUI1.8_Ch06_SliderWidget.pdf, jQueryUI1.8_Ch03_TabsWidget.pdf
+https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css --
+https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js -
+-->
+  </head>
+  
+  <body>
+    <h1>My Dynamic Multiplication Table</h1>
+
+    <!-- Form to allow user to enter the numbers -->
+    <form id="inputForm">
+      <label for="startMultiplier">Start Multiplier:</label>
+      <input type="number" id="startMultiplier" required>
+      <div id="startMultiplierSlider"></div>
+
+      <label for="endMultiplier">End Multiplier:</label>
+      <input type="number" id="endMultiplier" required>
+      <div id="endMultiplierSlider"></div>
+
+      <label for="startMultiplicand">Start Multiplicand:</label>
+      <input type="number" id="startMultiplicand" required>
+      <div id="startMultiplicandSlider"></div>
+
+      <label for="endMultiplicand">End Multiplicand:</label>
+      <input type="number" id="endMultiplicand" required>
+      <div id="endMultiplicandSlider"></div>
+
+      <button type="submit">Generate Table</button>
+    </form>
+
+    <div id="tableTabs">
+      <ul id="tabsList">
+        <li><a href="#inputTab">Input</a></li>
+      </ul>
+      <div id="inputTab">
+        <div id="tableContainer">
+        </div>
+      </div>
+    </div>
+    <p id="loadingMessage"></p>
+    <button id="deleteSelectedBtn">Delete Selected</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="js/dynamicTable.js"></script>
+  </body>
+</html>
